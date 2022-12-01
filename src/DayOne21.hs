@@ -1,15 +1,13 @@
-module DayOne21 (run1, run2) where
+module DayOne21 (solution1, solution2) where
 
+import Solution (Solution, solution)
 import Utils
 
-run1 :: String -> Int
-run1 = run solve1
+solution1 :: Solution Int
+solution1 = solution parse solve1
 
-run2 :: String -> Int
-run2 = run solve2
-
-run :: ([Int] -> Int) -> String -> Int
-run solve = solve . parse
+solution2 :: Solution Int
+solution2 = solution parse solve2
 
 parse :: String -> [Int]
 parse input = read <$> lines input
@@ -18,7 +16,7 @@ solve1 :: [Int] -> Int
 solve1 xs = foldl count 0 $ zipWithNext xs
   where
     count acc (x, y) = if x < y then acc + 1 else acc
-    
+
 solve2 :: [Int] -> Int
 solve2 = solve1 . aggregate
   where

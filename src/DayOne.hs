@@ -1,18 +1,15 @@
-module DayOne (run1, run2) where
+module DayOne (solution1, solution2) where
 
-import Control.Arrow ((>>>))
 import Data.List.Split (splitOn)
 import Relude.Functor.Fmap ((<<$>>))
+import Solution (Solution, solution)
 import Utils
 
-run1 :: String -> Int
-run1 = run solve1
+solution1 :: Solution Int
+solution1 = solution parse solve1
 
-run2 :: String -> Int
-run2 = run solve2
-
-run :: ([[Int]] -> Int) -> String -> Int
-run solve = parse >>> solve
+solution2 :: Solution Int
+solution2 = solution parse solve2
 
 parse :: String -> [[Int]]
 parse input = read <<$>> splitOn [""] (lines input)

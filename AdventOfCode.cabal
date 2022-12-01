@@ -25,6 +25,7 @@ library
   exposed-modules:
       DayOne
       DayOne21
+      Solution
       Utils
   other-modules:
       Paths_AdventOfCode
