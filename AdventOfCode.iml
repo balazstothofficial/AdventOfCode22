@@ -52,5 +52,6 @@
     <orderEntry type="library" name="process-1.6.16.0" level="project" />
     <orderEntry type="library" name="terminfo-0.4.1.5" level="project" />
     <orderEntry type="library" name="primitive-0.7.3.0" level="project" />
+    <orderEntry type="library" name="split-0.2.3.5" level="project" />
   </component>
 </module>

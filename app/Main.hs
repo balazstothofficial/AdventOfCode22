@@ -1,6 +1,6 @@
 module Main (main) where
 
-import DayOne21
+import DayOne
 
 main :: IO ()
-main = readFile "./input/DayOne21.txt" >>= print . run2
+main = readFile "./input/DayOne.txt" >>= print . run2
