@@ -22,6 +22,7 @@ dependencies:
 - base >= 4.7 && < 5
 - split
 - relude
+- containers
 
 ghc-options:
 - -Wall

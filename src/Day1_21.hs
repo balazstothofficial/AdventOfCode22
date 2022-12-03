@@ -1,4 +1,4 @@
-module DayOne21 (solution1, solution2) where
+module Day1_21 (solution1, solution2) where
 
 import Solution (Solution, solution)
 import Utils

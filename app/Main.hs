@@ -1,11 +1,11 @@
 module Main (main) where
 
-import DayTwo
+import Day3
 import Solution (Solution)
 import qualified Solution (run)
 
 main :: IO ()
-main = run "DayTwo.txt" solution2
+main = run "Day3.txt" solution2
 
 run :: Show b => String -> Solution b -> IO ()
 run fileName solution = readInput fileName >>= showSolution solution

@@ -1,4 +1,4 @@
-module DayOne (solution1, solution2) where
+module Day1 (solution1, solution2) where
 
 import Data.List.Split (splitOn)
 import Relude.Functor.Fmap ((<<$>>))
