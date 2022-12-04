@@ -27,6 +27,7 @@ library
       Day1_21
       Day2
       Day3
+      Day4
       Solution
       Utils
   other-modules:

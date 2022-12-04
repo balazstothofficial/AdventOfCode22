@@ -1,7 +1,7 @@
 module Day1_21 (solution1, solution2) where
 
 import Solution (Solution, solution)
-import Utils
+import Utils (windowed, zipWithNext)
 
 solution1 :: Solution Int
 solution1 = solution parse solve1

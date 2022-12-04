@@ -1,4 +1,4 @@
-module Utils (zipWithNext, windowed, zipTranspose, sortDescending) where
+module Utils (zipWithNext, windowed, zipTranspose, sortDescending, count) where
 
 import Control.Applicative
 import Data.List (sortBy, tails)
@@ -15,3 +15,6 @@ windowed m = zipTranspose . take m . tails
 
 sortDescending :: Ord a => [a] -> [a]
 sortDescending = sortBy $ flip compare
+
+count :: (a -> Bool) -> [a] -> Int
+count predicate = length . filter predicate
