@@ -53,9 +53,5 @@
     <orderEntry type="library" name="terminfo-0.4.1.5" level="project" />
     <orderEntry type="library" name="primitive-0.7.3.0" level="project" />
     <orderEntry type="library" name="split-0.2.3.5" level="project" />
-    <orderEntry type="library" name="relude-1.1.0.0" level="project" />
-    <orderEntry type="library" name="hashable-1.4.1.0" level="project" />
-    <orderEntry type="library" name="text-1.2.5.0" level="project" />
-    <orderEntry type="library" name="unordered-containers-0.2.19.1" level="project" />
   </component>
 </module>

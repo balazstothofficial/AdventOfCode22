@@ -1,10 +1,13 @@
 module Day3 (solution1, solution2) where
 
+import Control.Arrow ((>>>))
+import Data.Char (isUpper)
+import Data.List (find)
+import Data.List.Split (chunksOf)
+import Data.Maybe (fromJust)
 import Data.Set (Set)
 import qualified Data.Set as Set
 import Solution (Solution, solution)
-import Data.List (find)
-import Data.Maybe (fromJust)
 
 solution1 :: Solution Int
 solution1 = solution parse1 solve1
@@ -13,7 +16,7 @@ solution2 :: Solution Int
 solution2 = solution parse2 solve2
 
 parse1 :: String -> [(String, Set Char)]
-parse1 input = parseLine <$> lines input
+parse1 = lines >>> fmap parseLine
   where
     parseLine line = (left, Set.fromList right)
       where
@@ -21,27 +24,29 @@ parse1 input = parseLine <$> lines input
 
 solve1 :: [(String, Set Char)] -> Int
 solve1 = solve (\(first, second) -> fromJust $ find (`Set.member` second) first)
-    
+
 parse2 :: String -> [(String, Set Char, Set Char)]
-parse2 input = group $ lines input
-  where    
-    group [] = []
-    group ls = (first, Set.fromList second, Set.fromList third) : group (drop 3 ls)
+parse2 = lines >>> chunksOf 3 >>> fmap parseGroup
+  where
+    parseGroup group = (first, Set.fromList second, Set.fromList third)
       where
-        first = head ls
-        second = ls !! 1
-        third = ls !! 2
-        
+        first = head group
+        second = group !! 1
+        third = group !! 2
+
 solve2 :: [(String, Set Char, Set Char)] -> Int
 solve2 = solve findCommon
   where
-    findCommon (first, second, third) = 
+    findCommon (first, second, third) =
       fromJust $ find (\x -> Set.member x second && Set.member x third) first
-      
+
 solve :: (a -> Char) -> [a] -> Int
-solve findCommon xs = sum $ score . findCommon <$> xs
+solve findCommon = fmap (score . findCommon) >>> sum
 
 score :: Char -> Int
-score char = if ascii < 97 then ascii - 38 else ascii - 96
+score char =
+  if isUpper char
+    then ascii - fromEnum 'A' + 27
+    else ascii - fromEnum 'a' + 1
   where
     ascii = fromEnum char

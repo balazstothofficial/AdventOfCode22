@@ -1,6 +1,7 @@
 module Day2 (solution1, solution2) where
 
 import Solution (Solution, solution)
+import Control.Arrow ((>>>))
 
 data Hand = Rock | Paper | Scissors
   deriving Eq
@@ -49,7 +50,7 @@ inferior Paper = Rock
 inferior Scissors = Paper
      
 solve :: [(Hand, Hand)] -> Int
-solve xs = sum $ totalScore <$> xs
+solve = fmap totalScore >>> sum
   where
     totalScore (a, b) = score a b + extraScore b
 

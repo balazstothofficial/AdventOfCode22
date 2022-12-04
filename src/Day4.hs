@@ -3,6 +3,7 @@ module Day4 (solution1, solution2) where
 import Data.List.Split (splitOn)
 import Solution (Solution, solution)
 import Utils (count)
+import Control.Arrow ((>>>))
 
 data Range = ClosedRange Int Int
 
@@ -13,17 +14,16 @@ solution2 :: Solution Int
 solution2 = solution parse solve2
 
 parse :: String -> [(Range, Range)]
-parse input = parseRanges <$> lines input
+parse = lines >>> fmap parseRanges
   where
-    parseRanges string = (parseRange $ ranges !! 0, parseRange $ ranges !! 1)
+    parseRanges string = (range 0, range 1)
       where
+        range i = parseRange $ ranges !! i
         ranges = splitOn "," string
 
-    parseRange string = ClosedRange start end
+    parseRange string = ClosedRange (end 0) (end 1)
       where
-        start = read $ ends !! 0
-        end = read $ ends !! 1
-
+        end i = read $ ends !! i
         ends = splitOn "-" string
 
 solve1 :: [(Range, Range)] -> Int
