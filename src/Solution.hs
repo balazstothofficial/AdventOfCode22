@@ -1,6 +1,7 @@
 {-# LANGUAGE GADTs #-}
 
-module Solution (run, solution, Solution) where
+{-# OPTIONS -Wno-name-shadowing #-}
+module Solution (run, solution, Solution, runOnFile) where
 
 import Control.Arrow ((>>>))
 
@@ -9,3 +10,6 @@ data Solution a where
 
 solution :: Show a => (String -> b) -> (b -> a) -> Solution a
 solution parse solve = Solution (parse >>> solve)
+
+runOnFile :: String -> Solution b -> IO b
+runOnFile name solution = run solution <$> readFile ("./input/" ++ name ++ ".txt")
