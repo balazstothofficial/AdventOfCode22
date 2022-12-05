@@ -2,6 +2,7 @@ import qualified Day1
 import qualified Day2
 import qualified Day3
 import qualified Day4
+import qualified Day5
 import Solution (runOnFile)
 import Test.Hspec (describe, hspec, it, shouldReturn)
 import UtilsTest (utilsTest)
@@ -42,3 +43,17 @@ main = hspec $
 
         it "Solution 2" $
           runOnFile "Day4" Day4.solution2 `shouldReturn` 854
+
+    describe "Day 5" $
+      do
+        it "Solution 1 - Small" $
+          runOnFile "Day5_Small" Day5.solution1 `shouldReturn` "CMZ"
+
+        it "Solution 1" $
+          runOnFile "Day5" Day5.solution1 `shouldReturn` "HBTMTBSDC"
+
+        it "Solution 2 - Small" $
+          runOnFile "Day5_Small" Day5.solution2 `shouldReturn` "MCD"
+
+        it "Solution 2" $
+          runOnFile "Day5" Day5.solution2 `shouldReturn` "PQTJRSHWS"

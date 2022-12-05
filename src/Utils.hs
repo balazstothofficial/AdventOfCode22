@@ -1,7 +1,21 @@
-module Utils (zipWithNext, windowed, zipTranspose, sortDescending, count) where
+module Utils
+  ( zipWithNext,
+    windowed,
+    zipTranspose,
+    sortDescending,
+    count,
+    replace,
+    (?),
+    traced,
+    tracedWithPrefix,
+  )
+where
 
 import Control.Applicative
-import Data.List (sortBy, tails)
+import Control.Arrow ((>>>))
+import Data.List (intercalate, sortBy, tails)
+import Data.List.Split (splitOn)
+import Debug.Trace (trace)
 
 zipWithNext :: [a] -> [(a, a)]
 zipWithNext [] = []
@@ -18,3 +32,17 @@ sortDescending = sortBy $ flip compare
 
 count :: (a -> Bool) -> [a] -> Int
 count predicate = length . filter predicate
+
+replace :: Eq a => [a] -> [a] -> [a] -> [a]
+replace x y = splitOn x >>> intercalate y
+
+infixr 1 ?
+
+(?) :: a -> String -> a
+(?) = flip trace
+
+traced :: Show a => a -> a
+traced = tracedWithPrefix ""
+
+tracedWithPrefix :: Show a => String -> a -> a
+tracedWithPrefix prefix x = x ? prefix ++ show x
