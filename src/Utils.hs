@@ -8,12 +8,13 @@ module Utils
     (?),
     traced,
     tracedWithPrefix,
+    isDistinct,
   )
 where
 
 import Control.Applicative
 import Control.Arrow ((>>>))
-import Data.List (intercalate, sortBy, tails)
+import Data.List (intercalate, nub, sortBy, tails)
 import Data.List.Split (splitOn)
 import Debug.Trace (trace)
 
@@ -46,3 +47,6 @@ traced = tracedWithPrefix ""
 
 tracedWithPrefix :: Show a => String -> a -> a
 tracedWithPrefix prefix x = x ? prefix ++ show x
+
+isDistinct :: Eq a => [a] -> Bool
+isDistinct xs = nub xs == xs
