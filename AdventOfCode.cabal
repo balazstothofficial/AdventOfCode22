@@ -31,6 +31,7 @@ library
       Day5
       Day6
       Day7
+      Day8
       Debug
       Solution
       Utils
@@ -43,8 +44,10 @@ library
       base >=4.7 && <5
     , containers
     , either
+    , indexed-traversable
     , relude
     , safe
+    , set-monad
     , split
   default-language: Haskell2010
 
@@ -60,8 +63,10 @@ executable AdventOfCode-exe
     , base >=4.7 && <5
     , containers
     , either
+    , indexed-traversable
     , relude
     , safe
+    , set-monad
     , split
   default-language: Haskell2010
 
@@ -81,7 +86,9 @@ test-suite AdventOfCode-test
     , containers
     , either
     , hspec
+    , indexed-traversable
     , relude
     , safe
+    , set-monad
     , split
   default-language: Haskell2010

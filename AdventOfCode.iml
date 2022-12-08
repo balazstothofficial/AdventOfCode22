@@ -71,5 +71,6 @@
     <orderEntry type="library" name="indexed-traversable-0.1.2" level="project" />
     <orderEntry type="library" name="StateVar-1.2.2" level="project" />
     <orderEntry type="library" name="safe-0.3.19" level="project" />
+    <orderEntry type="library" name="set-monad-0.3.0.0" level="project" />
   </component>
 </module>

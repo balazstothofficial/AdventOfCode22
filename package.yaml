@@ -25,6 +25,8 @@ dependencies:
   - relude
   - either
   - safe
+  - indexed-traversable
+  - set-monad
 
 ghc-options:
   - -Wall
