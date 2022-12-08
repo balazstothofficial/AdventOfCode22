@@ -1,9 +1,12 @@
+{-# LANGUAGE NumericUnderscores #-}
+
 import qualified Day1
 import qualified Day2
 import qualified Day3
 import qualified Day4
 import qualified Day5
 import qualified Day6
+import qualified Day7
 import Solution (run, runOnFile)
 import Test.Hspec (describe, hspec, it, shouldBe, shouldReturn)
 import UtilsTest (utilsTest)
@@ -59,7 +62,7 @@ main = hspec $
         it "Solution 2" $
           runOnFile "Day5" Day5.solution2 `shouldReturn` "PQTJRSHWS"
 
-    describe "Day 5" $
+    describe "Day 6" $
       do
         it "Solution 1 - Small" $
           run Day6.solution1 "bvwbjplbgvbhsrlpgdmjqwftvncz" `shouldBe` Just 5
@@ -69,3 +72,17 @@ main = hspec $
 
         it "Solution 2" $
           runOnFile "Day6" Day6.solution2 `shouldReturn` Just 2773
+
+    describe "Day 7" $
+      do
+        it "Solution 1 - Small" $
+          runOnFile "Day7_Small" Day7.solution1 `shouldReturn` Right 95_437
+
+        it "Solution 1" $
+          runOnFile "Day7" Day7.solution1 `shouldReturn` Right 1_206_825
+
+        it "Solution 2 - Small" $
+          runOnFile "Day7_Small" Day7.solution2 `shouldReturn` Right 2_493_3642
+
+        it "Solution 2" $
+          runOnFile "Day7" Day7.solution2 `shouldReturn` Right 9_608_311

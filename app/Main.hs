@@ -1,7 +1,7 @@
 module Main (main) where
 
-import Day6
+import Day7 (solution1, solution2)
 import Solution (runOnFile)
 
 main :: IO ()
-main = runOnFile "Day6" solution2 >>= print
+main = runOnFile "Day7" solution2 >>= print

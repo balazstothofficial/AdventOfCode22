@@ -30,6 +30,8 @@ library
       Day4
       Day5
       Day6
+      Day7
+      Debug
       Solution
       Utils
   other-modules:
@@ -40,6 +42,9 @@ library
   build-depends:
       base >=4.7 && <5
     , containers
+    , either
+    , relude
+    , safe
     , split
   default-language: Haskell2010
 
@@ -54,6 +59,9 @@ executable AdventOfCode-exe
       AdventOfCode
     , base >=4.7 && <5
     , containers
+    , either
+    , relude
+    , safe
     , split
   default-language: Haskell2010
 
@@ -71,6 +79,9 @@ test-suite AdventOfCode-test
     , QuickCheck
     , base >=4.7 && <5
     , containers
+    , either
     , hspec
+    , relude
+    , safe
     , split
   default-language: Haskell2010

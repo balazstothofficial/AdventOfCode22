@@ -53,5 +53,23 @@
     <orderEntry type="library" name="terminfo-0.4.1.5" level="project" />
     <orderEntry type="library" name="primitive-0.7.3.0" level="project" />
     <orderEntry type="library" name="split-0.2.3.5" level="project" />
+    <orderEntry type="library" name="relude-1.1.0.0" level="project" />
+    <orderEntry type="library" name="hashable-1.4.1.0" level="project" />
+    <orderEntry type="library" name="text-1.2.5.0" level="project" />
+    <orderEntry type="library" name="unordered-containers-0.2.19.1" level="project" />
+    <orderEntry type="library" name="either-5.0.2" level="project" />
+    <orderEntry type="library" name="bifunctors-5.5.13" level="project" />
+    <orderEntry type="library" name="profunctors-5.6.2" level="project" />
+    <orderEntry type="library" name="semigroupoids-5.3.7" level="project" />
+    <orderEntry type="library" name="base-orphans-0.8.7" level="project" />
+    <orderEntry type="library" name="comonad-5.0.8" level="project" />
+    <orderEntry type="library" name="tagged-0.8.6.1" level="project" />
+    <orderEntry type="library" name="th-abstraction-0.4.5.0" level="project" />
+    <orderEntry type="library" name="contravariant-1.5.5" level="project" />
+    <orderEntry type="library" name="distributive-0.6.2.1" level="project" />
+    <orderEntry type="library" name="transformers-compat-0.7.2" level="project" />
+    <orderEntry type="library" name="indexed-traversable-0.1.2" level="project" />
+    <orderEntry type="library" name="StateVar-1.2.2" level="project" />
+    <orderEntry type="library" name="safe-0.3.19" level="project" />
   </component>
 </module>
