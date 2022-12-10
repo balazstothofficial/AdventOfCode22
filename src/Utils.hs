@@ -48,7 +48,7 @@ replaceElement x y = replace [x] [y]
 isDistinct :: Eq a => [a] -> Bool
 isDistinct xs = nub xs == xs
 
-infixr 9 >$>
+infixr 2 >$>
 
 (>$>) :: Functor f => (a -> f b) -> (b -> c) -> a -> f c
 f >$> g = f >>> fmap g
