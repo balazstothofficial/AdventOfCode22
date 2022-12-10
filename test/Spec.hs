@@ -1,6 +1,7 @@
 {-# LANGUAGE NumericUnderscores #-}
 
 import qualified Day1
+import qualified Day10
 import qualified Day2
 import qualified Day3
 import qualified Day4
@@ -116,3 +117,20 @@ main = hspec $
 
         it "Solution 2" $
           runOnFile "Day9" Day9.solution2 `shouldReturn` 2482
+
+    describe "Day 10" $
+      do
+        it "Solution 1 - Small" $
+          runOnFile "Day10_Small" Day10.solution1 `shouldReturn` 13140
+
+        it "Solution 1" $
+          runOnFile "Day10" Day10.solution1 `shouldReturn` 11220
+
+        it "Solution 2" $
+          runOnFile "Day10" Day10.solution2
+            `shouldReturn` "###..####.###...##....##.####.#....#..#.\n\
+                           \#..#....#.#..#.#..#....#.#....#....#.#..\n\
+                           \###....#..#..#.#..#....#.###..#....##...\n\
+                           \#..#..#...###..####....#.#....#....#.#..\n\
+                           \#..#.#....#....#..#.#..#.#....#....#.#..\n\
+                           \###..####.#....#..#..##..####.####.#..#."
