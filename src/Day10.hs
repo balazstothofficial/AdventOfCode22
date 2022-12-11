@@ -6,6 +6,7 @@ import Data.Foldable.WithIndex (ifoldl)
 import Data.List (intercalate)
 import Data.List.Split (chunksOf)
 import Solution (Solution, solution)
+import Utils ((>$>))
 import Prelude hiding (cycle)
 
 solution1 :: Solution Int
@@ -32,14 +33,14 @@ solve2 =
     >>> snd
     >>> reverse
     >>> chunksOf (40 * 6)
-    >>> fmap (chunksOf 40)
-    >>> fmap (intercalate "\n")
+    >$> chunksOf 40
+    >$> intercalate "\n"
     >>> intercalate "\n"
   where
     step i (x, pixels) cycle = (cycle x, pixels')
       where
         position = i `mod` 40
-        
+
         pixels' =
           if position >= x - 1 && position <= x + 1
             then '#' : pixels

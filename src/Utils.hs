@@ -49,7 +49,7 @@ isDistinct :: Eq a => [a] -> Bool
 isDistinct xs = nub xs == xs
 
 -- TODO (Probably remove):
-infixr 2 >$>
+infixl 2 >$>
 
 (>$>) :: Functor f => (a -> f b) -> (b -> c) -> a -> f c
 f >$> g = f >>> fmap g

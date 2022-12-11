@@ -2,6 +2,7 @@
 
 import qualified Day1
 import qualified Day10
+import qualified Day11
 import qualified Day2
 import qualified Day3
 import qualified Day4
@@ -134,3 +135,17 @@ main = hspec $
                            \#..#..#...###..####....#.#....#....#.#..\n\
                            \#..#.#....#....#..#.#..#.#....#....#.#..\n\
                            \###..####.#....#..#..##..####.####.#..#."
+
+    describe "Day 11" $
+      do
+        it "Solution 1 - Small" $
+          runOnFile "Day11_Small" Day11.solution1 `shouldReturn` 10605
+
+        it "Solution 1" $
+          runOnFile "Day11" Day11.solution1 `shouldReturn` 98280
+
+        it "Solution 2 - Small" $
+          runOnFile "Day11_Small" Day11.solution2 `shouldReturn` 2713310158
+
+        it "Solution 2" $
+          runOnFile "Day11" Day11.solution2 `shouldReturn` 17673687232
